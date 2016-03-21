@@ -1,11 +1,10 @@
 import sys, os, re
 
-if len(sys.argv) < 3:
+if len(sys.argv) != 3:
   print("Usage: {} <directory> <suffix>".format(sys.argv[0]))
   exit(1)
 
-directory = sys.argv[1]
-suffix = sys.argv[2]
+directory, suffix = sys.argv[1:3]
 regex = re.compile("\.{}$".format(suffix))
 
 for root, dirs, files, rootfd in os.fwalk(directory):
