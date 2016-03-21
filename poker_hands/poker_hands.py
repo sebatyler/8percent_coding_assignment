@@ -116,9 +116,6 @@ wins = [0, 0]
 with open('poker.txt') as data_file:
   for line in data_file:
     hands = line.strip().split(' ')
-    if len(hands) < 2:
-      break
-
     winner = poker(hands)
     wins[winner] += 1
 
